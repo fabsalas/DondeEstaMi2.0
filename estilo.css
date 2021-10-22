@@ -153,50 +153,58 @@ ul{
     opacity: .7;
 }
 
-
-
-
-/*Cards*/
-
-.main{
+/* populares Cards*/
+.popular-cards{
     height: 100vh;
     display: flex;
-    justify-content: center;
-    align-items: center;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    justify-content:center;
+    align-items: left;
+    gap:40px;
 }
+
 .box{
     width: 150px;
     height: 200px;
     box-shadow: 0 0 20px rgba(0,0,0, 0.197);
-    background: white;
+    background: #5C258D;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #4389A2, #5C258D);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #4389A2, #5C258D); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
     overflow: hidden;
     margin: 2px;
     cursor: pointer;
     border-radius: 15px;
 }
+
 .box div{
     width: 150px;
     height: 200px;
-
 }
-.box div img {
+
+.box div img{
     width: 100%;
     height: 100%;
     transform-origin: top;
     border-radius: 10px;
-    box-shadow: rgba(0,0,0, 0.197);
+    box-shadow: 0 0 20px rgba(0,0,0, 0.197);
     transition: transform .4s;
 }
-.box p{
-    position: absolute;
-    bottom: 0;
+
+.box:hover div img{
+    transform: scale(0.8) translateY(10px);
+}
+
+.box a img{
+    width: 5%;
+    height: auto;
+    position:absolute;
+    bottom:0;
     left: 50%;
-    font-family: cursive;
     transform: translate(-50%, 20px);
     transition: all .4s;
-
 }
-.box:hover p{
+
+.box:hover a img{
     transition-delay: .2s;
-    transform: translate(-50%,-5px);
+    transform: translate(-50%, 5px);
 }
